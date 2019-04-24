@@ -3,6 +3,7 @@ package com.casic.amaplocationdemo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
@@ -18,14 +19,22 @@ public class MainActivity extends AppCompatActivity {
     public AMapLocationClient mLocationClient;
     private AMapLocationClientOption mLocationOption;
     private static final String TAG = "MainActivity";
+    private TextView mTextView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initView();
 
         initData();
+    }
+
+    private void initView() {
+
+        mTextView = findViewById(R.id.show);
+
     }
 
     private void initData() {
@@ -64,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
                         Log.i(TAG, "地址:" + address + "\t国家信息:" + country + "\t省信息:" + province + "\t城市信息:" + city + "\t城区信息:" + district + "\t街道信息:" + street + "\t街道门牌号信息:" + streetNum + "\t当前定位点的AOI信息:" + aoiName+ "\t定位时间:" + format);
                         //地址:北京市丰台区外环西路114靠近总部资产大厦	国家信息:中国	省信息:北京市	城市信息:北京市	城区信息:丰台区	街道信息:外环西路	街道门牌号信息:114	当前定位点的AOI信息:总部基地18区	定位时间:2019-04-24 18:15:44
-
+                        mTextView.setText("地址:" + address + "\t国家信息:" + country + "\t省信息:" + province + "\t城市信息:" + city + "\t城区信息:" + district + "\t街道信息:" + street + "\t街道门牌号信息:" + streetNum + "\t当前定位点的AOI信息:" + aoiName+ "\t定位时间:" + format);
 
                     } else {
                         //定位失败时，可通过ErrCode（错误码）信息来确定失败的原因，errInfo是错误信息，详见错误码表。
