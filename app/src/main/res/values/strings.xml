@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">AMapLocationDemo</string>
+
+    <string name="permission_denied_forever_message">我们需要一些您拒绝的权限，或者系统应用失败，请手动设置为页面授权，否则功能不能正常使用！</string>
+    <string name="permission_rationale_message">您拒绝我们申请授权，请同意授权，否则功能不能正常使用！</string>
+</resources>
